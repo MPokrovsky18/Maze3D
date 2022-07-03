@@ -3,6 +3,6 @@ namespace Maze
 
     public interface IFly
     {
-        void Fly();
+        public void Fly();
     }
 }

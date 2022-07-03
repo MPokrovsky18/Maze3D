@@ -9,7 +9,7 @@ namespace Maze
         protected Transform _transform;
         protected Rigidbody _rigidbody;
 
-        protected float _speed = 5f;
+        [SerializeField] protected float _speed = 5f;
         protected int _health = 100;
         protected bool _isDead;
 
