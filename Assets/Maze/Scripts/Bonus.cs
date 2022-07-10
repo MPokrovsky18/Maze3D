@@ -27,6 +27,7 @@ namespace Maze
         }
         protected float HeightFly { get => _heightFly; set => _heightFly = value; }
         protected Renderer BonusRenderer { get => _renderer; set => _renderer = value; }
+        protected Color BonusColor => _color;
 
         protected virtual void Awake()
         {

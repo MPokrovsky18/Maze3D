@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 namespace Maze
@@ -6,6 +8,8 @@ namespace Maze
 
     public class BadBonus : Bonus, IFly, IRotate
     {
+        public event Action<string, Color> OnGameOver = delegate (string str, Color color) { };
+
         private float _speedRotate;
 
         protected override void Awake()
@@ -22,7 +26,7 @@ namespace Maze
 
         protected override void Interaction()
         {
-
+            OnGameOver?.Invoke(gameObject.name, BonusColor);
         }
 
         public void Fly()

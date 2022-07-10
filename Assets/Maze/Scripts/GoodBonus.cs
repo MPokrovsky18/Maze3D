@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -6,12 +7,17 @@ namespace Maze
 
     public class GoodBonus : Bonus, IFly, IFlick
     {
+        public event Action<int> AddPoints = delegate (int i) { };
+
         private Material _material;
+
+        private int _point;
 
         protected override void Awake()
         {
             base.Awake();
             _material = BonusRenderer.material;
+            _point = 1;
         }
 
         public override void Update()
@@ -22,7 +28,7 @@ namespace Maze
 
         protected override void Interaction()
         {
-
+            AddPoints?.Invoke(_point);
         }
 
         public void Fly()
