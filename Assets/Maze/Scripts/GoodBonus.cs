@@ -8,24 +8,26 @@ namespace Maze
     {
         private Material _material;
 
-        private float _hightFly;
-        
-
-        private void Awake()
+        protected override void Awake()
         {
-            _material = GetComponent<Material>();
-            _hightFly = Random.Range(1f, 3f);
+            base.Awake();
+            _material = BonusRenderer.material;
         }
 
-        private void Update()
+        public override void Update()
         {
             Fly();
             Flick();
         }
 
+        protected override void Interaction()
+        {
+
+        }
+
         public void Fly()
         {
-            transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time, _hightFly), transform.position.z);
+            transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time, HeightFly), transform.position.z);
         }
 
         public void Flick()
