@@ -3,6 +3,6 @@ namespace Maze
 
     public interface IFlick
     {
-        void Flick();
+        public void Flick();
     }
 }

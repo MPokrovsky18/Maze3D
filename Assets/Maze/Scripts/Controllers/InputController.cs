@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Maze
 {
 
-    public class InputController
+    public class InputController : IExecute
     {
         private readonly Unit _player;
 

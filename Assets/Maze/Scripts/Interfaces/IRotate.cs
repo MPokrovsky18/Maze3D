@@ -3,6 +3,6 @@ namespace Maze
 
     public interface IRotate
     {
-        void Rotate();
+        public void Rotate();
     }
 }
