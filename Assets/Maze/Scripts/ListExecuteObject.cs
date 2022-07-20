@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Maze
 {
@@ -23,7 +23,15 @@ namespace Maze
 
         public ListExecuteObject()
         {
+            Bonus[] bonusObjects = Object.FindObjectsOfType<Bonus>();
 
+            for(int i = 0; i < bonusObjects.Length; i++)
+            {
+                if(bonusObjects[i] is IExecute intObj)
+                {
+                    AddExecuteObject(intObj);
+                }
+            }
         }
 
         public void AddExecuteObject(IExecute execute)
